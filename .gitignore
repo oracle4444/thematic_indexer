@@ -1,7 +1,3 @@
-# Videos / photos
-*.mp4
-*.png
-
 # Models
 *.pt
 
