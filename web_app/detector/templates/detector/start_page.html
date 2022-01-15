@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Page</title>
+</head>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detector/style.css' %}">
+
+    <form action="detector/">
+        <button class="start_page">Process a new video</button>
+    </form>
+
+    <form action="classes/">
+        <button class="start_page">Show results</button>
+    </form>
+</body>
+</html>

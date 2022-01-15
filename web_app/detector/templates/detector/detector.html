@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detector</title>
+</head>
+<body>
+    {% extends "detector/base_dropzone.html" %}
+    {% load static %}
+
+    {% block content %}
+    <form class="dropzone dz" id="my_dropzone">
+        {% csrf_token %}
+        <div class="fallback">
+            <input name="file" type="file" id="file_uploader" multiple />
+        </div>
+    </form>
+    <button id="process_button" class="detector">Process</button>
+    <form action="/">
+        <button class="detector">Go home</button>
+    </form>
+
+    <script>
+        Dropzone.autoDiscover = false;
+
+        const myDropzone = new Dropzone("#my_dropzone", {
+            url: "process/",
+            acceptedFiles: 'video/*',
+            uploadMultiple: true,
+            autoProcessQueue: false,
+            parallelUploads: 256,
+            timeout: null,
+        })
+        const newButton = document.getElementById('process_button');
+
+        function uploadFiles()
+        {
+            myDropzone.processQueue();
+        }
+
+        newButton.addEventListener('click', uploadFiles);
+    </script>
+    {% endblock content %}
+
+</body>
+</html>

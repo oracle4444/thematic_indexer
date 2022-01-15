@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ video }}</title>
+</head>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detector/style.css' %}">
+
+    <h1>{{ video }}</h1>
+    <ul>
+    {% for instance in instances %}
+        <li><a href="{{ instance.id }}"> Frames: {{ instance.first_frame }} - {{ instance.last_frame }}</a></li>
+        <br>
+    {% endfor %}
+    </ul>
+</body>
+</html>

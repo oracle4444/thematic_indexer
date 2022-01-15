@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ class }}</title>
+</head>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detector/style.css' %}">
+    <h1>{{ class }}</h1>
+    <ul>
+    {% for video in videos %}
+        <li><a href="{{ video }}">{{ video }}</a></li>
+        <br>
+    {% endfor %}
+    </ul>
+</body>
+</html>

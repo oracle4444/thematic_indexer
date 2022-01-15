@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classes</title>
+</head>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detector/style.css' %}">
+    <h1>Classes</h1>
+    <ul>
+        {% for class in classes %}
+            <li><a href="{{ class }}">{{ class }}</a></li>
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+

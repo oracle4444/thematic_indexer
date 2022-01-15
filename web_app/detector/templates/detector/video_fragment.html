@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ instance.id }}</title>
+</head>
+<body>
+    {% load static %}
+    <video id="vid" controls height="100%" width="100%" src="{% static 'detector/videos/'|add:video %}" poster="{% static 'detector/posters/'|add:poster'%}">
+    </video>
+
+    <script>
+        let vid = document.getElementById("vid");
+
+        var minTime = {{ instance.first_frame }} / {{ fps }};
+        var maxTime = {{ instance.last_frame }} / {{ fps }};
+
+        function timeupdate()
+        {
+            if (vid.currentTime < minTime)
+            {
+                vid.currentTime = minTime;
+            }
+            else if (vid.currentTime > maxTime)
+            {
+                vid.currentTime = minTime;
+                vid.pause();
+            }
+        }
+        vid.addEventListener('timeupdate', timeupdate);
+
+    </script>
+
+
+</body>
+</html>
