@@ -46,7 +46,7 @@ python manage.py runserver
 
 Переносим в данную область необходимый видеофайл:
 
-![droped_file](screenshots/3_droped_file.png "droped_file")
+![dropped_file](screenshots/3_dropped_file.png "dropped_file")
 
 Нажимаем на кнопку `Process`:
 

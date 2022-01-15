@@ -2,7 +2,6 @@ psycopg2
 postgres
 Django
 filterpy
-numpy
 
 #for yolo
 # base ----------------------------------------
